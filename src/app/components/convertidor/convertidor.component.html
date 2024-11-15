@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+
+        <div class="input-field col s12">
+            <input placeholder="Placeholder" id="cantidad" type="number" [(ngModel)]="cantidad" 
+            class="validate" (input)="convertir()">
+            <label for="first_name">Ingrese cantidad</label>
+        </div>
+        <div class="input-field col s6">
+            <select id="tengo" [(ngModel)]="tengo" (change)="convertir()">
+            <option *ngFor="let moneda of monedas">{{moneda}}</option>
+             
+            </select>
+            <label for="tengo">Materialize Select</label>
+        </div>
+       
+
+
+        <div class="input-field col s6">
+            <select id="quiero" [(ngModel)]="quiero" (change)="convertir()">
+                <option *ngFor="let moneda of monedas">{{moneda}}</option>
+             
+            </select>
+            <label for="quiero">Materialize Select</label>
+        </div>
+
+    
+    </div>
+    <h5 *ngIf="cantidad > 0" style="margin-top: 100px; "> 
+        <span class="badge green white-text">{{cantidad}} {{tengo}}</span>
+        <span class="badge gray ">SON</span>
+        <span class="badge green white-text">{{total }} {{quiero}}</span> 
+        <!-- | number: '0.0-2' -->
+       
+       
+    </h5>
+</div>
+
